@@ -1,5 +1,7 @@
 # Django #
 .env
+todo-secrets
+
 *.log
 *.pot
 *.pyc
