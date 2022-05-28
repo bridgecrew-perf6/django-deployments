@@ -7,6 +7,7 @@ RUN mkdir /todo
 WORKDIR /todo
 
 COPY poetry.lock pyproject.toml /todo/
+RUN pip install --upgrade pip
 RUN pip install poetry
 RUN poetry config virtualenvs.create false \
   && poetry install $(test "$ENV" == production && echo "--no-dev") --no-interaction --no-ansi
