@@ -8,6 +8,7 @@ authors = ["Atsushi Toda <todaatsushi0@gmail.com>"]
 python = "^3.9"
 Django = "^4.0.4"
 beartype = "^0.10.4"
+django-environ = "^0.8.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"

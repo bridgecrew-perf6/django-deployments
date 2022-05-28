@@ -7,9 +7,9 @@ services:
     ports:
       - 5432:5432
     environment:
-      - POSTGRES_DB=profiles
-      - POSTGRES_USER=atsushi
-      - POSTGRES_PASSWORD=secretpassword
+      - POSTGRES_DB=$DB_NAME
+      - POSTGRES_USER=$DB_USER
+      - POSTGRES_PASSWORD=$DB_PASSWORD
       - ALLOW_IP_RANGE=0.0.0.0/0
 
   web:
@@ -24,6 +24,9 @@ services:
     links:
       - db
     environment:
-      - SECRET_KEY=secretkey
-      - DEBUG=False
+      - SECRET_KEY=$SECRET_KEY
+      - DEBUG=$DEBUG
+      - DB_NAME=$DB_NAME
+      - DB_USER=$DB_USER
+      - DB_PASSWORD=$DB_PASSWORD
 
