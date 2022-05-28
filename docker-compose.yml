@@ -14,7 +14,7 @@ services:
 
   web:
     build: .
-    image: kube_web:0.0.1
+    image: todaatsushi0/todo:0.0.1
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/todo
