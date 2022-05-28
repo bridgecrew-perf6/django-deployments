@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+
+  db:
+    image: postgres
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_DB=profiles
+      - POSTGRES_USER=atsushi
+      - POSTGRES_PASSWORD=secretpassword
+      - ALLOW_IP_RANGE=0.0.0.0/0
+
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/todo
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    links:
+      - db
+    environment:
+      - SECRET_KEY=secretkey
+      - DEBUG=False
+
