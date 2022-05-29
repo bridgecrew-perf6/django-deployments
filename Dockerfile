@@ -15,4 +15,4 @@ RUN poetry config virtualenvs.create false \
 COPY . /todo/
 
 EXPOSE 8000
-CMD ["python", "manage.py", "runserver" , "0.0.0.0:8000"]
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "todo.wsgi"]
