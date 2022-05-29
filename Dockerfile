@@ -13,3 +13,6 @@ RUN poetry config virtualenvs.create false \
   && poetry install $(test "$ENV" == production && echo "--no-dev") --no-interaction --no-ansi
 
 COPY . /todo/
+
+EXPOSE 8000
+CMD ["python", "manage.py", "runserver" , "0.0.0.0:8000"]
