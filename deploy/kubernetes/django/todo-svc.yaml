@@ -10,5 +10,5 @@ spec:
     app: todo
   ports:
     - port: 8000
-      protocol: TCP
       targetPort: 8000
+      protocol: TCP

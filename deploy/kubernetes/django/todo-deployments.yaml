@@ -24,4 +24,5 @@ spec:
                 name: todo-config
           ports:
             - containerPort: 8000
-              name: local
+              protocol: TCP
+              name: gunicorn
